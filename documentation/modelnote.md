@@ -9,3 +9,5 @@
 [!] Payment transactions will be managed by the user The user encode/manage/update the bus information (1 to many relationship).
 [!] The user encode/manage/update the driver information (1 to many relationship).
 [!] The driver has schedule of trips/travel (1 to many relationship).
+
+source https://itsourcecode.com/free-projects/fyp/bus-reservation-system-er-diagram-entity-relationship-diagram/

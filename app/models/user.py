@@ -1,5 +1,6 @@
 from app import db 
 from datetime import datetime
+# from werkzeug import generate_password_hash, check_password_hash
 
 class Users(db.Model):
     user_id = db.Column(db.BigInteger, primary_key=True, autoincrement=True)
@@ -22,6 +23,11 @@ class Users(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow())
     updated_at = db.Column(db.DateTime, default=datetime.utcnow())
     
-    def __repr__(self):
-        return f'Quotes<{self.users_name}>'
-        
+    
+    
+    # def set_password(self, raw_password):
+    #     self.password_hash = generate_password_hash(raw_password)
+
+    # def check_password(self, password):
+    #     return check_password_hash(self.password_hash, password)
+

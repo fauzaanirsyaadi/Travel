@@ -20,3 +20,4 @@ python-editor
 six
 SQLAlchemy
 Werkzeug
+Flask-Script

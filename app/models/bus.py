@@ -1,5 +1,7 @@
-from app import db 
+from app import db
 from datetime import datetime
+from app.models.user import Users
+from app.models.driver import Drivers
 
 class Buses(db.Model):
     bus_id = db.Column(db.BigInteger, primary_key=True, autoincrement=True)
@@ -10,11 +12,20 @@ class Buses(db.Model):
     capacity = db.Column(db.BigInteger, unique=False, nullable=True)
     
     Status =  db.Column(db.Integer, nullable=False)
-    user_id = db.Column(db.Integer, foreign_key=True, nullable=False)
-    driver_id = db.Column(db.Integer, foreign_key=True, nullable=False)
+
+    # user_id = db.Column(db.Integer, foreign_key=True, nullable=False)
+    # driver_id = db.Column(db.Integer, foreign_key=True, nullable=False)
+    # kurang jelas
+
+    user_id = db.Column(db.Integer, db.ForeignKey(Users.user_id))
+    driver_id = db.Column(db.Integer, db.ForeignKey(Drivers.driver_id))
+    # lebih
+    
+    # user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
+    # driver_id = db.Column(db.Integer, db.ForeignKey('drivers.driver_id'))
+
     created_at = db.Column(db.DateTime, default=datetime.utcnow())
     updated_at = db.Column(db.DateTime, default=datetime.utcnow())
     
-    def __repr__(self):
-        return f'Quotes<{self.bus_name}>'
+    
         
